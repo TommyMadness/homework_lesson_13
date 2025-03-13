@@ -11,6 +11,9 @@ def test_submit_practice_form_by_using_send_keys(setup_browser):
     with allure.step("Открываем главную страницу"):
         browser.open("https://demoqa.com/automation-practice-form")
 
+        browser.driver.execute_script("$('#fixedban').remove()")
+        browser.driver.execute_script("$('footer').remove()")
+
     with allure.step("Заполняем данные пользователя"):
         browser.element("#firstName").send_keys("Sponge")
         browser.element("#lastName").send_keys("Bob")
@@ -72,6 +75,9 @@ def test_submit_practice_form_by_using_type(setup_browser):
 
     with allure.step("Открываем главную страницу"):
         browser.open("https://demoqa.com/automation-practice-form")
+
+        browser.driver.execute_script("$('#fixedban').remove()")
+        browser.driver.execute_script("$('footer').remove()")
 
     with allure.step("Заполняем данные пользователя"):
         browser.element("#firstName").type("Sponge")

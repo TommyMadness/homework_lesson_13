@@ -52,11 +52,3 @@ def setup_browser(request):
     attach.add_logs(browser)
     attach.add_video(browser)
     browser.quit()
-
-
-@pytest.fixture(scope="function", autouse=True)
-def remove_banner():
-    yield
-    browser.element("#fixedban").wait_until(be.visible, timeout=3)
-    browser.driver.execute_script("$('#fixedban').remove()")
-    browser.driver.execute_script("$('footer').remove()")
