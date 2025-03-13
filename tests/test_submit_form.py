@@ -34,6 +34,9 @@ def test_submit_practice_form_by_using_send_keys(setup_browser):
     with allure.step("Выбираем тему из интересов"):
         browser.element("#subjectsInput").send_keys("Biology").press_enter()
 
+    with allure.step("Скроллим страницу вниз"):
+        browser.execute_script("window.scrollBy(0, 400);")
+
     with allure.step("Выбираем хобби"):
         browser.all(".custom-control-label").element_by(have.text("Sports")).click()
 
@@ -98,6 +101,9 @@ def test_submit_practice_form_by_using_type(setup_browser):
 
     with allure.step("Выбираем тему из интересов"):
         browser.element("#subjectsInput").type("Biology").press_enter()
+
+    with allure.step("Скроллим страницу вниз"):
+        browser.execute_script("window.scrollBy(0, 400);")
 
     with allure.step("Выбираем хобби"):
         browser.all(".custom-control-label").element_by(have.text("Sports")).click()
