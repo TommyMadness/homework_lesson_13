@@ -3,7 +3,7 @@ import os
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config, browser
+from selene import Browser, Config, browser, be
 from dotenv import load_dotenv
 
 from utils import attach
@@ -54,7 +54,9 @@ def setup_browser(request):
     browser.quit()
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def remove_banner():
+    yield
+    browser.element("#fixedban").wait_until(be.visible, timeout=3)
     browser.driver.execute_script("$('#fixedban').remove()")
     browser.driver.execute_script("$('footer').remove()")
