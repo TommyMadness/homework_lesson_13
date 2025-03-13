@@ -1,6 +1,5 @@
 import allure
-from allure_commons.types import Severity
-from selene import browser, have, be, command
+from selene import have, be, command
 
 from conftest import setup_browser
 
