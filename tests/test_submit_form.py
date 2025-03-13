@@ -7,8 +7,6 @@ from conftest import setup_browser
 @allure.title("Successful fill form_1")
 def test_submit_practice_form_by_using_send_keys(setup_browser):
     browser = setup_browser
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
 
     with allure.step("Открываем главную страницу"):
         browser.open("https://demoqa.com/automation-practice-form")
@@ -71,8 +69,6 @@ def test_submit_practice_form_by_using_send_keys(setup_browser):
 @allure.title("Successful fill form_2")
 def test_submit_practice_form_by_using_type(setup_browser):
     browser = setup_browser
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
 
     with allure.step("Открываем главную страницу"):
         browser.open("https://demoqa.com/automation-practice-form")
