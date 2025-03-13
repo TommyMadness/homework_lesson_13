@@ -32,6 +32,7 @@ def test_submit_practice_form_by_using_send_keys(setup_browser):
         browser.element("#subjectsInput").send_keys("Biology").press_enter()
 
     with allure.step("Выбираем хобби"):
+        browser.element(".custom-control-label").perform(command.js.scroll_into_view)
         browser.all(".custom-control-label").element_by(have.text("Sports")).click()
 
     with allure.step("Указываем адрес"):
@@ -94,6 +95,7 @@ def test_submit_practice_form_by_using_type(setup_browser):
         browser.element("#subjectsInput").type("Biology").press_enter()
 
     with allure.step("Выбираем хобби"):
+        browser.element(".custom-control-label").perform(command.js.scroll_into_view)
         browser.all(".custom-control-label").element_by(have.text("Sports")).click()
 
     with allure.step("Указываем адрес"):
